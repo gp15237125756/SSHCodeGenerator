@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!-- essential configuration for diverse layers -->
+<configuration>
+    <basePackagePath>E:\eclipse\ws\Smart\src\main\java</basePackagePath>
+    <packagePrefix>\com\ld</packagePrefix>
+    <moduleName>\audience</moduleName>
+    <templates>
+    	<!-- essential configuration for dao layer -->
+        <template id="dao" engine="freemarker" name="Dao class" >
+        	<!-- ftl freemark template -->
+            <templateFile>dao.ftl</templateFile>
+            <!-- entity class name -->
+            <entityName>TicketPrice</entityName>
+            <!-- primary key type name for entity class -->
+            <primaryKeyType>Long</primaryKeyType>
+            <!-- dao class name -->
+            <daoName>GirlDao</daoName>
+            <!-- dao class remarks -->
+            <remarks>TicketPrice data access object</remarks>
+        </template>
+        <!-- essential configuration for dto layer -->
+        <template id="dto" engine="freemarker" name="Dto class" >
+        	<dtoName>GirlDto</dtoName>
+            <entityFullName>com.ld.audience.entity.TicketPrice</entityFullName>
+            <remarks>TicketPrice data transfer object</remarks>
+        </template>
+        <!-- essential configuration for action layer -->
+        <template id="action" engine="freemarker" name="action class" >
+        	<actionName>GirlAction</actionName>
+            <entityFullName>com.ld.audience.dto.ticket.TicketPrice</entityFullName>
+            <targetPath></targetPath>
+            <targetFileName></targetFileName>
+            <remarks>TicketPrice data transfer object</remarks>
+        </template>
+         <!-- essential configuration for service layer -->
+        <template id="service" engine="freemarker" name="service class" >
+        	<daoName>GirlDao</daoName>
+            <serviceName>GirlService</serviceName>
+            <dtoName>GirlDto</dtoName>
+            <entityName>TicketPrice</entityName>
+            <searchDtoName>GirlSearchDto</searchDtoName>
+            <entityFullName>com.ld.audience.entity.TicketPrice</entityFullName>
+            <dtoFullName>com.ld.audience.dto.GirlDto</dtoFullName>
+            <daoFullName>com.ld.audience.dao.GirlDao</daoFullName>
+            <searchDtoFullName>com.ld.audience.dto.GirlSearchDto</searchDtoFullName>
+            <searchMethodName>searchGirls</searchMethodName>
+            <numberKey>true</numberKey>
+            <keyGetMethod>getPriceId</keyGetMethod>
+            <keySetMethod>setPriceId</keySetMethod>
+            <saveMethodName>saveGirls</saveMethodName>
+            <deleteMethodName>deleteGirls</deleteMethodName>
+            <findMethodName>findGirl</findMethodName>
+            <remarks>TicketPrice data transfer object</remarks>
+        </template>
+    </templates>
+</configuration>
